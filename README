@@ -1,0 +1,46 @@
+=======================================================================
+ INSTALL
+=======================================================================
+
+Copy files 
+
+- PXListView+TextHeight.h
+- PXListView+TextHeight.m
+
+=======================================================================
+ DEPENDENCY
+=======================================================================
+
+PXListView
+
+https://github.com/Perspx/PXListView
+
+=======================================================================
+ USAGE
+=======================================================================
+
+- (CGFloat)listView:(PXListView *)aListView heightOfRow:(NSUInteger)row
+{
+    NSDictionary *item = [listItems objectAtIndex:row];
+    NSString *text = [entry valueForKey:@"message"];
+
+    // [font, lineFragmentPadding] set same setting for your NSTextView in your cell
+
+    return [aListView heightForText:text
+                               font:[NSFont fontWithName:@"Lucida Grande" size:12.0]
+                lineFragmentPadding:5.0
+                  horizontalPadding:60.0
+                    verticalPadding:30.0
+                          minHeight:60.0];
+}
+
+
+=======================================================================
+ License
+=======================================================================
+
+MIT License
+
+Copyright (c) 2012 Lyo Kato <lyo.kato at gmail dot com>
+All rights reserved.
+
